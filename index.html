@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS S3 Static Website Demo</title>
+
+<!-- ===== CSS ===== -->
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 40px;
+    background: rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.container {
+    padding: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #00c6ff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0072ff;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 AWS S3 Static Website</h1>
+    <p>Successfully Hosted on Amazon S3</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Welcome 👋</h2>
+        <p>This website is hosted using AWS S3 Static Hosting.</p>
+        <button onclick="showMessage()">Click Me</button>
+        <p id="message"></p>
+    </div>
+
+    <div class="card">
+        <h2>Live Time ⏰</h2>
+        <p id="time"></p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 AWS DevOps Demo</p>
+</footer>
+
+<!-- ===== JavaScript ===== -->
+<script>
+function showMessage() {
+    document.getElementById("message").innerHTML =
+        "✅ JavaScript is working perfectly on S3!";
+}
+
+// Live Clock
+function updateTime() {
+    const now = new Date();
+    document.getElementById("time").innerHTML =
+        now.toLocaleTimeString();
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+
+</body>
+</html>
